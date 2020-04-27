@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<title>Lotus BillSplitter</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Lotus Bill Splitter</h1>
+    <p class="lead">
+    Use this page to split the yearly christmas diner bill
+    </p>
+    <div class="row">
+      <div class="col-6-sm">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>Cost</th>
+              <th>euro</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Total bill</td>
+            <td><input type="text" onchange="allFunctions()" value=489 id="total_bill" size=3/></td>
+          </tr>
+          <tr>
+            <td>Food adults</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=255 id="food_adults" size=3/></td>
+          </tr>
+            <tr>
+            <td>Food kids</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=125 id="food_kids" size=3/></td>
+          </tr>
+            <tr>
+            <td>Drinks</td>
+              <td><span class="txt" type="text" id="drinks"/></td>
+          </tr>
+          </tbody>
+        </table>
+        </div>
+      <div class="col-6-sm">
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th>Family</th>
+              <th>Kids</th>
+              <th>Adults</th>
+              <th>Cost</th>
+              <th>Zero</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>Maarten</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=3 name="kids" size=1 id="kids_1"/></td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="adults" size=1 id="adults_1"></td>
+            <td><span class="txt" type="text" size=1 id="cost_1"/></td>
+            <td><button class="btn btn-secondary btn-sm" id="button" onClick="zero(1)">zero</button></td>
+          </tr>
+          <tr>
+            <td>Walter</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="kids" size=1 id="kids_2"/></td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="adults" size=1 id="adults_2"></td>
+            <td><span class="txt" type="text" size=1 id="cost_2"/></td>
+            <td><button class="btn btn-secondary btn-sm" id="button" onClick="zero(2)">zero</button></td>
+          </tr>
+            <tr>
+            <td>Erik</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="kids" size=1 id="kids_3"/></td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="adults" size=1 id="adults_3"></td>
+            <td><span class="txt" type="text" size=1 id="cost_3"/></td>
+            <td><button class="btn btn-secondary btn-sm" id="button" onClick="zero(3)">zero</button></td>
+          </tr>
+            <tr>
+            <td>Henk Jan</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=3 name="kids" size=1 id="kids_4"/></td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="adults" size=1 id="adults_4"></td>
+            <td><span class="txt" type="text" size=1 id="cost_4"/></td>
+            <td><button class="btn btn-secondary btn-sm" id="button" onClick="zero(4)">zero</button></td>
+          </tr>
+            <tr>
+            <td>Alfred</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="kids" size=1 id="kids_5"/></td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="adults" size=1 id="adults_5"></td>
+            <td><span class="txt" type="text" size=1 id="cost_5"/></td>
+            <td><button class="btn btn-secondary btn-sm" id="button" onClick="zero(5)">zero</button></td>
+          </tr>
+            <tr>
+            <td>Jochem</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=0 name="kids" size=1 id="kids_6"/></td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=1 name="adults" size=1 id="adults_6"></td>
+            <td><span class="txt" type="text" size=1 id="cost_6"/></td>
+            <td><button class="btn btn-secondary btn-sm" id="button" onClick="zero(6)">zero</button></td>
+          </tr>
+          </tr>
+          <tr>
+            <td>Jelle</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=3 name="kids" size=1 id="kids_10"/></td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="adults" size=1 id="adults_10"></td>
+            <td><span class="txt" type="text" size=1 id="cost_10"/></td>
+            <td><button class="btn btn-secondary btn-sm" id="button" onClick="zero(10)">zero</button></td>
+          </tr>
+            <tr>
+            <td>Arnold</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=0 name="kids" size=1 id="kids_7"/></td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="adults" size=1 id="adults_7"></td>
+            <td><span class="txt" type="text" size=1 id="cost_7"/></td>
+            <td><button class="btn btn-secondary btn-sm" id="button" onClick="zero(7)">zero</button></td>
+          </tr>
+          <tr>
+            <td>Ronald</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="kids" size=1 id="kids_8"/></td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="adults" size=1 id="adults_8"></td>
+            <td><span class="txt" type="text" size=1 id="cost_8"/></td>
+            <td><button class="btn btn-secondary btn-sm" id="button" onClick="zero(8)">zero</button></td>
+          </tr>
+            <tr>
+            <td>Jan Willem</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="kids" size=1 id="kids_9"/></td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="adults" size=1 id="adults_9"></td>
+            <td><span class="txt" type="text" size=1 id="cost_9"/></td>
+            <td><button class="btn btn-secondary btn-sm" id="button" onClick="zero(9)">zero</button></td>
+          </tr>
+          <tr>
+            <td>Leendert</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=3 name="kids" size=1 id="kids_12"/></td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="adults" size=1 id="adults_12"></td>
+            <td><span class="txt" type="text" size=1 id="cost_12"/></td>
+            <td><button class="btn btn-secondary btn-sm" id="button" onClick="zero(12)">zero</button></td>
+          </tr>
+          <tr>
+            <td>Joris</td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="kids" size=1 id="kids_11"/></td>
+            <td><input class="txt" type="text" onchange="allFunctions()" value=2 name="adults" size=1 id="adults_11"></td>
+            <td><span class="txt" type="text" size=1 id="cost_11"/></td>
+            <td><button class="btn btn-secondary btn-sm" id="button" onClick="zero(11)">zero</button></td>
+          </tr>
+            <tr>
+            <td>Total</td>
+            <td><span class="txt" type="text" name="kids" size=1 id="total_kids"/></td>
+            <td><span class="txt" type="text" name="adults" size=1 id="total_adults"/></td>
+            </tr>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+<script>
+  
+ window.onload=function(){
+   calcDrinks();
+   findTotal("kids");
+   findTotal("adults");
+   calcCost();
+};
+  
+  function allFunctions(){
+    calcDrinks();
+    findTotal("kids");
+    findTotal("adults");
+    calcCost();
+  };
+  
+  function findTotal(name){
+    var arr = document.getElementsByName(name);
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseFloat(arr[i].value))
+            tot += parseFloat(arr[i].value);
+    }
+    document.getElementById("total_"+name).innerHTML= tot;
+    
+};
+  
+  function calcDrinks(){
+    var total_bill = document.getElementById("total_bill");
+    var food_adults = document.getElementById("food_adults");
+    var food_kids = document.getElementById("food_kids");
+    var drinks = Math.round(parseFloat(total_bill.value) - parseFloat(food_adults.value) - parseFloat(food_kids.value));
+    document.getElementById("drinks").innerHTML = drinks;
+  };
+  
+  function calcCost(){
+    //include for-loop for two families
+    var i;
+    for (i = 1; i<=12; i++) {
+      var total_adults = parseInt(document.getElementById("total_adults").innerText);
+      var total_kids = parseInt(document.getElementById("total_kids").innerText);
+      var drinks = parseFloat(document.getElementById("drinks").innerText);
+      var kids = parseInt(document.getElementById("kids_"+i).value);
+      var adults = parseInt(document.getElementById("adults_"+i).value);
+      var food_adults = parseFloat(document.getElementById("food_adults").value);
+      var food_kids = parseFloat(document.getElementById("food_kids").value);
+    
+      var cost = Math.round((adults*food_adults/total_adults)+(kids*food_kids/total_kids)+(drinks/(total_adults + total_kids))*(kids + adults));
+      document.getElementById("cost_"+i).innerHTML = cost;
+      };
+    };
+    
+  function zero(number){
+    var kids_id = "kids_"+number;
+    var adults_id = "adults_"+number;
+    document.getElementById(kids_id).value = 0;
+    document.getElementById(adults_id).value = 0;
+    allFunctions();
+  };
+  
+ </script>
+
+</body>
+   </html>
